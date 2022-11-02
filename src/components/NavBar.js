@@ -13,6 +13,7 @@ const NavBar = () => {
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/recette">Recette</Nav.Link>
             <Nav.Link as={Link} to="/chaud">Chaud</Nav.Link>
+            <Nav.Link as={Link} to="/froid">Froid</Nav.Link>
             <Nav.Link as={Link} to="/plat">Plat</Nav.Link>
             <Nav.Link as={Link} to="/ingredient">Ingredient</Nav.Link>
             <Nav.Link as={Link} to="/difficulte">Difficulte</Nav.Link>
@@ -21,7 +22,7 @@ const NavBar = () => {
         </Container>
       </Navbar>
       <br />
-     
+
     </div>
   );
 };
@@ -58,7 +59,7 @@ export default NavBar;
 //             <li>
 //                 <Link to="/difficulte">Difficulté</Link>
 //             </li>
-            
+
 //           </ul>
 //         </div>
 //       </nav>
