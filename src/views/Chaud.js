@@ -65,6 +65,8 @@ const Chaud = () => {
                   <tr>
                     <th>Id</th>
                     <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
 
                   </tr>
                 </thead>
@@ -73,6 +75,8 @@ const Chaud = () => {
                   <tr>
                     <td>{item.idProduct.value}</td>
                     <td>{item.name.value}</td>
+                    <td>{item.description.value}</td>
+                    <td>{item.price.value}</td>
 
 
 

@@ -11,6 +11,7 @@ import Difficulte from "./views/Difficulte"
 import Livraison from "./views/Livraison"
 import 'bootstrap/dist/css/bootstrap.css';
 import Froid from "./views/Froid";
+import Produits from "./views/Produits";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/recette" element={<Recette />} />
+        <Route path="/produits" element={<Produits />} />
         <Route path="/chaud" element={<Chaud />} />
         <Route path="/froid" element={<Froid />} />
         <Route path="/plat" element={<Plat />} />
