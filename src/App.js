@@ -9,6 +9,7 @@ import Plat from "./views/Plat";
 import Ingredient from "./views/Ingredient"
 import Difficulte from "./views/Difficulte"
 import Livraison from "./views/Livraison"
+import Client from "./views/Client"
 import 'bootstrap/dist/css/bootstrap.css';
 import Froid from "./views/Froid";
 import Produits from "./views/Produits";
@@ -26,6 +27,7 @@ function App() {
         <Route path="/ingredient" element={<Ingredient />} />
         <Route path="/difficulte" element={<Difficulte />} />
         <Route path="/livraison" element={<Livraison />} />
+        <Route path="/clients" element={<Client />} />
 
 
 

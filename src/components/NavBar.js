@@ -19,6 +19,7 @@ const NavBar = () => {
             <Nav.Link as={Link} to="/ingredient">Ingredient</Nav.Link>
             <Nav.Link as={Link} to="/difficulte">Difficulte</Nav.Link>
             <Nav.Link as={Link} to="/livraison">Livraison</Nav.Link>
+            <Nav.Link as={Link} to="/clients">Clients</Nav.Link>
 
           </Nav>
         </Container>
