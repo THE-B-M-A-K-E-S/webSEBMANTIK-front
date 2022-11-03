@@ -13,9 +13,11 @@ const NavBar = () => {
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/recette">Recette</Nav.Link>
             <Nav.Link as={Link} to="/chaud">Chaud</Nav.Link>
+            <Nav.Link as={Link} to="/froid">Froid</Nav.Link>
             <Nav.Link as={Link} to="/plat">Plat</Nav.Link>
             <Nav.Link as={Link} to="/ingredient">Ingredient</Nav.Link>
             <Nav.Link as={Link} to="/difficulte">Difficulte</Nav.Link>
+            <Nav.Link as={Link} to="/livraison">Livraison</Nav.Link>
 
           </Nav>
         </Container>
