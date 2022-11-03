@@ -3,12 +3,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 const Chaud = () => {
   const [Chaud, setChaud] = useState(null);
-  const [Animal, setAnimal] = useState(null);
-  const [Liquide, setLiquide] = useState(null);
 
 
   async function fetchData() {
-    console.log("aaaaaaa");
 
     axios
       .get(`http://localhost:8095/chaud`, {
@@ -18,28 +15,6 @@ const Chaud = () => {
         console.log(res.data.results.bindings);
         setChaud(res.data.results.bindings);
       });
-
-
-    axios
-    .get(`http://localhost:8095/animal`, {
-      headers: { "Access-Control-Allow-Origin": "*" },
-    })
-    .then((res) => {
-      console.log(res.data.results.bindings);
-      setAnimal(res.data.results.bindings);
-    });
-
-
-    axios
-    .get(`http://localhost:8095/liquide`, {
-      headers: { "Access-Control-Allow-Origin": "*" },
-    })
-    .then((res) => {
-      console.log(res.data.results.bindings);
-      setLiquide(res.data.results.bindings);
-    });
-
-
   }
 
   useEffect(() => {

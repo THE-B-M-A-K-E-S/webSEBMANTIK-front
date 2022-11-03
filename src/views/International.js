@@ -1,30 +1,23 @@
-import React from 'react'
+import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
-
-const Plat = () => {
-
-  const [Plat, setPlat] = useState(null);
+const International = () => {
+  const [International, setInternational] = useState(null);
 
 
   async function fetchData() {
-    console.log("aaaaaaa");
 
     axios
-      .get(`http://localhost:8095/plat`, {
+      .get(`http://localhost:8095/international`, {
         headers: { "Access-Control-Allow-Origin": "*" },
       })
       .then((res) => {
-        console.log(res.data.results.bindings);
-        setPlat(res.data.results.bindings);
+        setInternational(res.data.results.bindings);
       });
   }
-
   useEffect(() => {
     fetchData();
   }, []);
-
 
 
   return (
@@ -32,28 +25,36 @@ const Plat = () => {
         <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Liste de Plats</h4>
+            <h4 class="card-title">Les Internationals</h4>
             <div class="table-responsive">
               <table class="table">
                 <thead>
                   <tr>
-                    <th>Description</th>
-                    <th>Nom</th>
-                 
+                    <th>Id</th>
+                    <th>Title</th>
+
                   </tr>
                 </thead>
                 <tbody>
-                {Plat?.map((item) => (
+                {International?.map((item) => (
                   <tr>
-                    <td>{item.description.value}</td>
-                    <td>{item.nom.value}</td>
+                    <td>{item.idMarque.value}</td>
+                    <td>{item.title.value}</td>
+
+
+
 
 
                   </tr>
-               
+
+
+
                ))}
                 </tbody>
-              </table>
+
+</table>
+
+
             </div>
           </div>
         </div>
@@ -62,4 +63,4 @@ const Plat = () => {
   )
 }
 
-export default Plat
+export default International;

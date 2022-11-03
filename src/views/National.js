@@ -1,57 +1,54 @@
-import React from 'react'
+import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
-
-const Difficulte = () => {
-
-  const [Diff, setDiff] = useState(null);
-
+const National = () => {
+  const [national, setNational] = useState(null);
 
   async function fetchData() {
-    console.log("aaaaaaa");
 
     axios
-      .get(`http://localhost:8095/difficulte`, {
-        headers: { "Access-Control-Allow-Origin": "*" },
-      })
-      .then((res) => {
-        console.log(res.data.results.bindings);
-        setDiff(res.data.results.bindings);
-      });
+        .get(`http://localhost:8095/national`, {
+          headers: { "Access-Control-Allow-Origin": "*" },
+        })
+        .then((res) => {
+          setNational(res.data.results.bindings);
+        });
   }
-
   useEffect(() => {
     fetchData();
   }, []);
-
-
 
   return (
     <div>
         <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Les types de difficultés</h4>
+            <h4 class="card-title">Les National</h4>
             <div class="table-responsive">
               <table class="table">
                 <thead>
                   <tr>
-                    <th>Type</th>
-                 
+                    <th>Id</th>
+                    <th>Title</th>
                   </tr>
                 </thead>
                 <tbody>
-                {Diff?.map((item) => (
+                {national?.map((item) => (
                   <tr>
-                    <td>{item.type.value}</td>
+                    <td>{item.idMarque.value}</td>
+                    <td>{item.title.value}</td>
 
 
                   </tr>
-               
+
+
+
                ))}
                 </tbody>
-              </table>
+
+</table>
+
+
             </div>
           </div>
         </div>
@@ -60,4 +57,4 @@ const Difficulte = () => {
   )
 }
 
-export default Difficulte
+export default National;

@@ -4,30 +4,26 @@ import NavBar from "./components/NavBar";
 import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
 import Chaud from "./views/Chaud";
-import Recette from "./views/Recette";
-import Plat from "./views/Plat";
-import Ingredient from "./views/Ingredient"
-import Difficulte from "./views/Difficulte"
 import Livraison from "./views/Livraison"
 import Client from "./views/Client"
 import 'bootstrap/dist/css/bootstrap.css';
 import Froid from "./views/Froid";
 import Produits from "./views/Produits";
+import International from "./views/International";
+import National from "./views/National";
 
 function App() {
   return (
     <div className="App">
       <NavBar />
       <Routes>
-        <Route path="/recette" element={<Recette />} />
         <Route path="/produits" element={<Produits />} />
         <Route path="/chaud" element={<Chaud />} />
         <Route path="/froid" element={<Froid />} />
-        <Route path="/plat" element={<Plat />} />
-        <Route path="/ingredient" element={<Ingredient />} />
-        <Route path="/difficulte" element={<Difficulte />} />
         <Route path="/livraison" element={<Livraison />} />
         <Route path="/clients" element={<Client />} />
+        <Route path="/International" element={<International />} />
+        <Route path="/national" element={<National />} />
 
 
 
