@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react'
 
 export default function Boutiques() {
 	const [boutiques, setBoutiques] = useState(null)
+	const [searchedBoutiques, setSearched] = useState(null)
 	const [filter, setFilter] = useState('boutiques')
+	const [search, setSearch] = useState('')
 
 	useEffect(() => {
 		;(async () => {
@@ -15,6 +17,16 @@ export default function Boutiques() {
 			setBoutiques(json.results.bindings)
 		})()
 	}, [filter])
+
+	useEffect(() => {
+		if (search === '') setSearched(boutiques)
+		else
+			setSearched(
+				boutiques?.filter(boutique =>
+					boutique.nameBoutique.value.includes(search)
+				)
+			)
+	}, [search])
 
 	// return <>{JSON.stringify(Boutiques)}</>
 	return (
@@ -29,6 +41,14 @@ export default function Boutiques() {
 				<option value="drive-in">Drive-In</option>
 			</select>
 
+			<input
+				type="text"
+				name="query"
+				id="query"
+				placeholder="search..."
+				onChange={event => setSearch(event.target.value)}
+			/>
+
 			<table class="table">
 				<thead>
 					<tr>
@@ -38,7 +58,7 @@ export default function Boutiques() {
 					</tr>
 				</thead>
 				<tbody>
-					{boutiques?.map(item => (
+					{searchedBoutiques?.map(item => (
 						<tr>
 							<td>{item.idBoutique.value}</td>
 							<td>{item.nameBoutique.value}</td>
