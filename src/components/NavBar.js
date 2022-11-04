@@ -1,35 +1,49 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
 
 const NavBar = () => {
-  return (
-    <div>
-        <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href="#home">Electro SEBMAK</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link as={Link} to="/produits">Produits</Nav.Link>
-            <Nav.Link as={Link} to="/chaud">Chaud</Nav.Link>
-            <Nav.Link as={Link} to="/froid">Froid</Nav.Link>
-            <Nav.Link as={Link} to="/livraison">Livraison</Nav.Link>
-            <Nav.Link as={Link} to="/clients">Clients</Nav.Link>
-            <Nav.Link as={Link} to="/national">National</Nav.Link>
-            <Nav.Link as={Link} to="/International">International</Nav.Link>
+	return (
+		<div>
+			<Navbar bg="dark" variant="dark">
+				<Container>
+					<Navbar.Brand href="#home">Electro SEBMAK</Navbar.Brand>
+					<Nav className="me-auto">
+						<Nav.Link as={Link} to="/produits">
+							Produits
+						</Nav.Link>
+						<Nav.Link as={Link} to="/chaud">
+							Chaud
+						</Nav.Link>
+						<Nav.Link as={Link} to="/froid">
+							Froid
+						</Nav.Link>
+						<Nav.Link as={Link} to="/livraison">
+							Livraison
+						</Nav.Link>
+						<Nav.Link as={Link} to="/clients">
+							Clients
+						</Nav.Link>
+						<Nav.Link as={Link} to="/national">
+							National
+						</Nav.Link>
+						<Nav.Link as={Link} to="/International">
+							International
+						</Nav.Link>
+						<Nav.Link as={Link} to="/boutiques">
+							Boutiques
+						</Nav.Link>
+					</Nav>
+				</Container>
+			</Navbar>
+			<br />
+		</div>
+	)
+}
 
-          </Nav>
-        </Container>
-      </Navbar>
-      <br />
-
-    </div>
-  );
-};
-
-export default NavBar;
-
+export default NavBar
 
 // import React from "react";
 // import { Link } from "react-router-dom";
